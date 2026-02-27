@@ -33,12 +33,12 @@ nav:
   - Главная: index.md
   - Об авторе: about.md
   - Лабораторные работы:
-      - Обзор работ: labs/index.md
       - Лаба 1 — Статический сайт: labs/lab1.md
       - Лаба 2: labs/lab2.md
       - Лаба 3: labs/lab3.md
       - Лаба 4: labs/lab4.md
       - Лаба 5: labs/lab5.md
+  - Проекты: projects.md
   - Контакты: contact.md
 
 plugins:
