@@ -12,7 +12,8 @@ workflows:
           - name: mkdocs-build
             image: python:3.11-slim
             script:
+              - cd src
               - pip install mkdocs mkdocs-material
               - mkdocs build --clean
-              - mkdir -p release-site
-              - cp -r site/* release-site/
+              - mkdir -p ../release-site
+              - cp -r site/* ../release-site/
