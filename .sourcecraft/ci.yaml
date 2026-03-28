@@ -1,17 +1,18 @@
 on:
   push:
-    - workflows: build-mkdocs
+    - workflows: build-site
       filter:
         branches: ["main"]
-
 workflows:
-  build-mkdocs:
+  build-site:
     tasks:
-      - name: build-and-deploy
+      - name: build-and-publish-docs
         cubes:
-          - name: mkdocs-build
-            image: python:3.11-slim
+          - name: build-mkdocs-docs
+            image: docker.io/library/python:3.14-slim
             script:
-              - cd src
+              - python -m pip install --upgrade pip
               - pip install mkdocs mkdocs-material
-              - mkdocs build --clean -d ../public
+              - cd src
+              - mkdocs build --clean -d ../docs
+              - ls -la ../docs
